@@ -3,13 +3,13 @@ using namespace std;
 int main()
 {
 
-    int feet=0;
-    int a;
+    int feet;
+    int inch=12;
     int total=0;
     printf("enter the feet = ");
-    scanf("%d",&a);
+    scanf("%d",&feet);
      
-     total=12*feet;
+     total=inch*feet;
      cout<<total;
-
+    return 0;
 }
