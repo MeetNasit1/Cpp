@@ -1,53 +1,43 @@
-#include<iostream>
+#include <iostream>
+#include <string>
 using namespace std;
 
-class Batsman
-{
-    private:
-   int bcode;
-   string bname;
-   int innings, notout, runs;
-   float batavg;
-   void calcavg();
-   public:
-   string name;
-  
-   void readdata()
-   {
-       cout<<"enter bcode:";
-       cin>>bcode;
-       cout<<"enter bname:";
-       cin>>bname;
-       cout<<"enter innings:";
-       cin>>innings;
-       cout<<"enter notout:";
-       cin>>notout;
-       cout<<"enter runs:";
-       cin>>runs; 
-   }
-   void displaydata()
-   {
-    cout<<"display bcode"<<bcode<<endl;
-    cout<<"display bname"<<bname<<endl;
-    cout<<"display innings"<<innings<<endl;
-    cout<<"display notout"<<notout<<endl;
-    cout<<"display runs"<<runs<<endl;
- calcavg();
-   }
+class TEST {
+private:
+    int TestCode;
+    string Description;
+    int NoCandidate;
+    int CenterReqd;
 
+    int CALCNTR() {
+        return (NoCandidate / 100) + 1;
+    }
+
+public:
+    void SCHEDULE() {
+        cout << "Enter Test Code: ";
+        cin >> TestCode;
+        cout << "Enter Description: ";
+        cin.ignore();
+        getline(cin, Description);
+        cout << "Enter Number of Candidates: ";
+        cin >> NoCandidate;
+        CenterReqd = CALCNTR();
+    }
+
+    void DISPTEST() {
+        cout << "Test Code: " << TestCode << endl;
+        cout << "Description: " << Description << endl;
+        cout << "Number of Candidates: " << NoCandidate << endl;
+        cout << "Centers Required: " << CenterReqd << endl;
+    }
 };
-void Batsman::calcavg()
-{
-    int total=0;
-  total=batavg=runs/(innings-notout);
-   cout<<"batsman avg is"<<total;
 
-}
-int main()
-{
-    Batsman c;
-    c.readdata();
-    c.displaydata();
-    
-    
+int main() {
+    TEST test1;
+    test1.SCHEDULE();
+    cout << "****************" << endl;
+    test1.DISPTEST();
+
+    return 0;
 }

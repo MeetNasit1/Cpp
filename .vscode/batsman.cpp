@@ -9,7 +9,6 @@ class Batsman
    int innings, notout, runs;
    float batavg;
 
-   
    void calcavg();
 
 
@@ -52,6 +51,6 @@ int main()
     Batsman c;
     c.readdata();
     c.displaydata();
-    
-    
+
+
 }
