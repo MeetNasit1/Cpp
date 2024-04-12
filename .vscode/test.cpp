@@ -11,7 +11,7 @@ int centereqd;
  
 int calcntr() 
 { 
-    return(nocendines/100)+1; 
+    return(nocendines/100)+1;
 } 
  
  
