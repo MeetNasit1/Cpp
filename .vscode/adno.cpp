@@ -2,7 +2,8 @@
 #include<string>
 using namespace std;
 
-class report:
+class report
+
 {
     private:
     int adno;
@@ -10,16 +11,7 @@ class report:
     float mark;
     float avarage;
 
-    void getavg()
-    {
-        float sum=0;
-        for(int i=0;i<3;i++)
-        {
-            sum += marks[i];
-        }
-         avarage=sum/3;
-
-    }
+    
 
     public:
     void readinfo()
