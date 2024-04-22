@@ -3,13 +3,16 @@ using namespace std;
 class student 
 { 
 private: 
+    int arr[3];
     int admNo; 
     string sname; 
     float eng, math, sci; 
     float ctotal(float eng, float math, float sci); 
  
-public: 
+public:
+    
     void Takedata() 
+   
     { 
         cout << "enter admNo :"; 
         cin >> admNo; 
@@ -23,7 +26,7 @@ public:
         cin >> sci; 
         cout << endl; 
     } 
- 
+    
     void showdata() 
     { 
  
@@ -42,10 +45,12 @@ float student ::ctotal(float eng, float math, float sci)
 } 
 int main() 
 { 
+     for(int i=0;i<3;i++)
+    {
     student avi; 
     avi.Takedata(); 
     cout << "********************" << endl; 
-    avi.showdata(); 
- 
+    avi.showdata();
+    }
     return 0; 
 }
