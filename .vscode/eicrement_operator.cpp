@@ -23,14 +23,14 @@ void complex :: printdata()
 }
 void complex :: operator--()
 {
-    --x;
-    --y;
+    x=-x;
+    y=-y;
 }
 
 int main()
 {
     complex c;
-    c.getdata(5,10); 
+    c.getdata(5,-10); 
     c.printdata();
     --c;
     c.printdata();
