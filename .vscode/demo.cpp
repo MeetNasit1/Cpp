@@ -2,42 +2,52 @@
 #include <string>
 using namespace std;
 
-class TEST {
+class base 
+{
 private:
-    int TestCode;
-    string Description;
-    int NoCandidate;
-    int CenterReqd;
-
-    int CALCNTR() {
-        return (NoCandidate / 100) + 1;
-    }
+    int student_no = 1;
 
 public:
-    void SCHEDULE() {
-        cout << "Enter Test Code: ";
-        cin >> TestCode;
-        cout << "Enter Description: ";
-        cin.ignore();
-        getline(cin, Description);
-        cout << "Enter Number of Candidates: ";
-        cin >> NoCandidate;
-        CenterReqd = CALCNTR();
-    }
+    string name = "meet";
 
-    void DISPTEST() {
-        cout << "Test Code: " << TestCode << endl;
-        cout << "Description: " << Description << endl;
-        cout << "Number of Candidates: " << NoCandidate << endl;
-        cout << "Centers Required: " << CenterReqd << endl;
+    void printdata()
+    {
+        cout << "student no:-" << student_no << endl;
     }
 };
 
-int main() {
-    TEST test1;
-    test1.SCHEDULE();
-    cout << "****************" << endl;
-    test1.DISPTEST();
+class base1 : public base 
+{
+private:
+    int english = 50;
+    int maths = 60;
+ 
+
+public:
+    void getdata() 
+    {
+        cout << "english:-" << english << endl;
+        cout << "maths:-" << maths << endl;
+       
+    }
+};
+
+class derive : public base1 
+{
+public:
+    void showdata() {
+        int total1 = english + maths ;
+        cout << "Total marks: " << total1 << endl;
+    }
+};
+
+int main() 
+{
+    derive c;
+    c.printdata();
+    cout << "student name: " << c.name << endl;
+    c.getdata();
+    c.showdata();
 
     return 0;
 }
