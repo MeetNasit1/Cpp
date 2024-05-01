@@ -1,77 +1,54 @@
-#include <iostream>
-#include <string>
+#include<iostream>
 using namespace std;
 
-class HotelMenu
+class Hotel
 {
 private:
-    string item;
-    float price;
+    string name = "Surbhi Hotel";
+    int menuOption;
+    int selectItem;
+    int billOption;
 
 public:
-    float price;
-    void setItem(string itemName, float itemPrice)
+    void displayHotelName()
     {
-        item = itemName;
-        price = itemPrice;
+        cout << "Welcome to " << name << "!" << endl;
     }
 
-    void displayItem() 
+    void printData()
     {
-        cout << setw(20) << left << item << "Rs. " << price << endl;
+        
+        cout<<"enter 0 exit"<<endl;
+        cout << "Enter 1 to open the menu" << endl;
+        cout << "Enter 2 to select an item" << endl;
+        cout << "Enter 3 to show the bill" << endl;
+        cin >> menuOption;
     }
-};
-
-class GSTBill {
-private:
-    float totalAmount;
-    float gstRate;
-
-public:
-    GSTBill(float rate) {
-        gstRate = rate;
-        totalAmount = 0;
-    }
-
-    void addToBill(float amount) 
+    void manuopen()
     {
-        totalAmount += amount;
-    }
+        if(menuOption=1)
+        {
+        cout<<"\t\t\t\tmanu"<<endl;
+        cout<<"************************************************************"<<endl;
+        cout<<"\t1           kaju kari       RS:-100"<<endl;
+        cout<<"\t2          kaju kari       RS:-100"<<endl;
+        cout<<"\t3           kaju kari       RS:-100"<<endl;
+        cout<<"\t4           kaju kari       RS:-100"<<endl;
 
-    float calculateGST() {
-        return totalAmount * (gstRate / 100);
+        cout<<"exit to manu to entrer 0"<<endl;
+        cin>>menuOption;
+       
     }
-
-    void displayBill() 
-    {
-        cout << fixed << setprecision(2);
-        cout << "Total Amount: Rs. " << totalAmount << endl;
-        cout << "GST (" << gstRate << "%): Rs. " << calculateGST() << endl;
-        cout << "Grand Total: Rs. " << totalAmount + calculateGST() << endl;
-    }
+}
 };
 
 int main()
- {
-    HotelMenu menu[5];
-    menu[0].setItem("Veg Biryani", 150);
-    menu[1].setItem("Paneer Tikka", 200);
-    menu[2].setItem("Butter Naan", 50);
-    menu[3].setItem("Dal Makhani", 120);
-    menu[4].setItem("Gulab Jamun", 80);
+{
+    Hotel hotel;
 
-    GSTBill bill(18); // 18% GST rate
-
-    cout << "Welcome to Hotel XYZ!" << endl;
-    cout << "Menu:" << endl;
-    for (int i = 0; i < 5; ++i)
-    {
-        menu[i].displayItem();
-        bill.addToBill(menu[i].price);
-    }
-
-    cout << "\nYour Bill:" << endl;
-    bill.displayBill();
+    hotel.displayHotelName();
+    hotel.printData();
+    hotel.manuopen();
 
     return 0;
 }
