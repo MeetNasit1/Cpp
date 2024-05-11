@@ -4,6 +4,7 @@
     int add(int arr[100], int size, int element, int capacity, int index)
     {
 
+        
         if (size >= capacity)
         {
             return -1;

@@ -1,29 +1,50 @@
-#include<stdio.h>
+#include <stdio.h>
 
-    
-    int deelet(int index,int arr[100],int size)
-    {
-        printf("enter the size of array:-");
-        
-        for(int i=index;i<size;i++)
-    {
-        arr[i]=arr[i+1];
-    }
-    for(int i=0;i<size-1;i++)
-    {
-        printf("%d \t",arr[i]);
-    }
-    return 0;
-    }
-
-
-int main()
+int deelet(int index, int arr[100], int size)
 {
 
-    int index=2;
-    int arr[100];
-    int size=5;
-    deelet(index,arr,size);
+    printf("enter the size of array:-");
+    scanf("%d", &size);
 
-    return 0;
+    printf("when do you want to add the indrx:-");
+    scanf("%d", &index);
+    if (size >= index)
+    {
+        for (int k = 0; k < size; k++)
+        {
+            scanf("%d", &arr[k]);
+        }
+        for (int k = 0; k < size; k++)
+        {
+            printf("%d \t",arr[k]);
+        }
+
+        //delet array
+    for (int i = index; i < size; i++)
+        {
+            arr[i] = arr[i + 1];
+        }
+        for (int i = 0; i < size - 1; i++)
+        {
+            printf("\t %d \t", arr[i]);
+        }
+    }
+    else
+    {
+        printf("no element found!");
+    }
+
+    
+
 }
+
+    int main()
+    {
+
+        int index;
+        int arr[100];
+        int size;
+        deelet(index, arr, size);
+
+        return 0;
+    }
