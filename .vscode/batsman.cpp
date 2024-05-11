@@ -32,7 +32,7 @@ class Batsman
    {
     cout<<"display bcode:-"<<bcode<<endl;
     cout<<"display bname:-"<<bname<<endl;
-    cout<<"display innings:-"<<innings<<endl;
+    cout<<"display innings:-"<<innings<<endl
     cout<<"display notout:-"<<notout<<endl;
     cout<<"display runs:-"<<runs<<endl;
  calcavg();
